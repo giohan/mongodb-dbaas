@@ -8,7 +8,7 @@
 
    (There are alternative ways to install the Atlas Kubernetes Operator - via Helm or Kubectl)
 
-## Step 1 - Installing the Atlas Kubernetes Operators
+## Step 1 - Installing the Atlas Kubernetes Operator
 1. Install the operator via the Atlas cli
 ```properties
 atlas kubernetes operator install
