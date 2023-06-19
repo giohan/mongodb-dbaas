@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-atlas
+  labels:
+    app: hello-atlas
+spec:
+  selector:
+    matchLabels:
+      app: hello-atlas
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-atlas
+    spec:
+      containers:
+      - name: hello-atlas
+        image: mongo
+        env:
+          - name: "MDB_CONNECTION_STRING"
+            valueFrom:
+              secretKeyRef:
+                name: dotlocal-project-dotlocal-cluster-gitops-user
+                key: connectionStringStandardSrv
+        command: ["mongosh"]
+        args: ["$(MDB_CONNECTION_STRING)"]

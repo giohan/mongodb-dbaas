@@ -1,0 +1,12 @@
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasProject
+metadata:
+  name: atlas-project
+  labels:
+    app.kubernetes.io/version: 1.6.0
+spec:
+  name: atlas-project
+  projectIpAccessList:
+    - ipAddress: "0.0.0.0/0"
+      comment: "Allowing access to database from everywhere (only for Demo!)"
+

@@ -1,0 +1,15 @@
+apiVersion: atlas.mongodb.com/v1
+kind: AtlasDeployment
+metadata:
+  name: first-cluster
+  labels:
+    app.kubernetes.io/version: 1.6.0
+spec:
+  projectRef:
+    name: atlas-project
+  deploymentSpec:
+    name: "first-cluster"
+    providerSettings:
+      instanceSizeName: M0
+      providerName: AWS
+      regionName: US_EAST_1
